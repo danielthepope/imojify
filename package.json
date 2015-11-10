@@ -1,0 +1,25 @@
+{
+  "name": "gemojify",
+  "version": "0.0.1",
+  "description": "A bit of JS that replaces colon :emoji: in HTML with images",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "emoji",
+    "enojify",
+    "GitHub",
+    "colon",
+    "css",
+    "gemoji"
+  ],
+  "author": "danielthepope",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0",
+    "node-sass": "^3.4.1"
+  }
+}

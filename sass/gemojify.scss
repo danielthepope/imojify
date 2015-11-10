@@ -1,0 +1,37 @@
+$size: 16px;
+
+.emoji {
+  width: 1em;
+  height: 1em;
+  position: relative;
+  top: 0.15em;
+  display: inline-block;
+  background-size: cover;
+}
+
+.emoji-sm {
+  @extend .emoji;
+  width: $size;
+  height: $size;
+}
+
+.emoji-md {
+  @extend .emoji;
+  width: $size*1.5;
+  height: $size*1.5;
+}
+
+.emoji-lg {
+  @extend .emoji;
+  width: $size*2;
+  height: $size*2;
+}
+
+.emoji-xl {
+  @extend .emoji;
+  width: $size*4;
+  height: $size*4;
+}
+
+@import 'includes/emoji-url';
+// @import 'includes/emoji-inline';
