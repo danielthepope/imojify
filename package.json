@@ -1,6 +1,6 @@
 {
   "name": "gemojify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A bit of JS that replaces colon :emoji: in HTML with images",
   "repository": {
     "type": "git",
