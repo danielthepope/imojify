@@ -2,13 +2,20 @@
   "name": "gemojify",
   "version": "0.0.1",
   "description": "A bit of JS that replaces colon :emoji: in HTML with images",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/danielthepope/gemojify.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/owner/gemojify/issues"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "emoji",
-    "enojify",
+    "emojify",
     "GitHub",
     "colon",
     "css",
