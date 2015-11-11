@@ -9,7 +9,7 @@
     <p>This paragraph won't :cry: <button id="emojify" onclick="showMore()">Click here to show this emoji</button></p>
     <script src="js/gemojify.js"></script>
     <script>
-      gemojify('.gemojify');
+      gemojify(); // equivalent to gemojify('.gemojify')
 
       function showMore() {
         gemojify('p');
