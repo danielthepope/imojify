@@ -4,7 +4,7 @@ A bit of JS that replaces colon :emoji: in HTML with images
 ## Introduction
 First off, a warning. This is my first JavaScript library, it's probably very broken!
 
-This is a front-end library that replaces text inside colons with a `span` element of a particular CSS class that will fetch its corresponding emoji.
+This is a front-end library that replaces text inside colons with a `span` element of a particular CSS class that will fetch its corresponding emoji. To find the right colon emoji to use, try [emoji.muan.co](http://emoji.muan.co/). The images themselves were lovingly borrowed from [emoji-cheat-sheet.com](https://github.com/arvida/emoji-cheat-sheet.com/tree/master/public/graphics/emojis) - I really wasn't looking forward to typing all the names manually, then I found this!
 
 e.g. `:smile:` becomes ![smile emoji](https://dl.dropboxusercontent.com/u/13316703/gemojify/smile.png)
 
