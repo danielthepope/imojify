@@ -11,7 +11,6 @@ fs.writeFileSync(output, '');
 var files = fs.readdirSync(emojiLocation);
 files.forEach(function(element) {
   if (element.endsWith('.png')) {
-    console.log(element);
     var name = element.split('.')[0].replace('+','_');
     var sass = '';
     if (inline) {
