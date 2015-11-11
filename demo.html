@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
+  <!-- This demo is very similar to the one found in README.md, but with some extra resilience checks. -->
   <head>
     <link rel="stylesheet" href="css/gemojify.css">
+    <title>Gemojify demo</title>
   </head>
-  <body>
-    <h1 class="gemojify">We :heart: emoji!</h1>
-    <p class="gemojify">:thumbsup: This paragraph will be processed :tada:</p>
-    <p>This paragraph won't :cry: <button id="emojify" onclick="showMore()">Click here to show this emoji</button></p>
+  <body class="gemojify">
+    <h1 title="don't > :cry: <">We :heart: emoji!</h1>
+    <p>:+1: This paragraph will be processed :tada:</p>
     <script src="js/gemojify.js"></script>
     <script>
       gemojify(); // equivalent to gemojify('.gemojify')
-
-      function showMore() {
-        gemojify('p');
-        document.getElementById('emojify').remove();
-      }
     </script>
   </body>
 </html>
