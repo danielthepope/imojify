@@ -6,7 +6,15 @@
   <body>
     <h1 class="gemojify">We :heart: emoji!</h1>
     <p class="gemojify">:thumbsup: This paragraph will be processed :tada:</p>
-    <p>This paragraph won't :cry:</p>
+    <p>This paragraph won't :cry: <button id="emojify" onclick="showMore()">Click here to show this emoji</button></p>
     <script src="js/gemojify.js"></script>
+    <script>
+      gemojify('.gemojify');
+
+      function showMore() {
+        gemojify('p');
+        document.getElementById('emojify').remove();
+      }
+    </script>
   </body>
 </html>
