@@ -1,6 +1,6 @@
 {
   "name": "gemojify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Front-end library that replaces colon :emoji: with images",
   "repository": {
     "type": "git",
