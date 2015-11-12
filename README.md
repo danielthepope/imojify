@@ -2,8 +2,6 @@
 Front-end library that replaces colon :emoji: with images
 
 ## Introduction
-First off, a warning: this is my first JavaScript library. It's still in its early stages, so it's probably very broken!
-
 This is a front-end library that replaces text inside colons with a `span` element of a particular CSS class that will fetch its corresponding emoji. To find the right colon emoji to use, try [emoji.muan.co](http://emoji.muan.co/). The images themselves were lovingly borrowed from [emoji-cheat-sheet.com](https://github.com/arvida/emoji-cheat-sheet.com/tree/master/public/graphics/emojis) - I really wasn't looking forward to typing all the names manually, then I found this!
 
 e.g. `:smile:` becomes ![smile emoji](https://dl.dropboxusercontent.com/u/13316703/gemojify/smile.png)
@@ -47,7 +45,7 @@ becomes
 ![Colon emoji inside the Gemojify class are converted to real emoji](https://dl.dropboxusercontent.com/u/13316703/gemojify/gemojify_demo.png)
 
 ## Adding custom emoji
-If you're one of those people who thinks "There is no such thing as too much emoji", you can add your own emoji.
+If you're one of those people who thinks "There is no such thing as too much emoji", you can add your own emoji, including animated GIFs!
 
 1. In order to update the CSS, you need `gulp-cli` installed (`npm install gulp-cli -g`).
 1. You also need to install the development dependencies: `npm install`
