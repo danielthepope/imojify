@@ -6,7 +6,9 @@ $size: 16px;
   position: relative;
   top: 0.15em;
   display: inline-block;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0;
 }
 
 .emoji-sm {
@@ -33,5 +35,4 @@ $size: 16px;
   height: $size*4;
 }
 
-@import 'includes/emoji-url';
-// @import 'includes/emoji-inline';
+@import 'includes/emoji';
