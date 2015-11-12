@@ -1,0 +1,29 @@
+{
+  "name": "gemojify",
+  "main": "index.js",
+  "version": "0.0.4",
+  "homepage": "https://github.com/danielthepope/gemojify",
+  "authors": [
+    "Daniel Pope <djpope2365@gmail.com>"
+  ],
+  "description": "Front-end library that replaces colon :emoji: with images",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "emoji",
+    "emojify",
+    "GitHub",
+    "colon",
+    "css",
+    "gemoji"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

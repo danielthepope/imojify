@@ -10,10 +10,11 @@ The emoji scales to the size of the font, so emoji specified in `<h1>` tags will
 
 ## Use in your project
 
-Using NPM?
+Using NPM or Bower?
 
 ```
 npm install gemojify
+bower install gemojify
 ```
 
 Or just download the repository from GitHub.
