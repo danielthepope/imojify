@@ -1,29 +1,24 @@
 function imojify(scope) {
   scope = scope || '.imojify';
-  var classCache = [];
+  var classLookup;
   var elementsToReplace = document.querySelectorAll(scope);
   for (var i = 0; i < elementsToReplace.length; i++) {
     imojify_node(elementsToReplace[i]);
   }
 
   function cssRuleExists(selector) {
-    var sheets = document.styleSheets;
-
-    if (classCache.indexOf(selector.trim()) >= 0) {
-      return true;
-    }
-
-    for (var i in sheets) {
-      var rules = sheets[i].rules || sheets[i].cssRules;
-      for (var r in rules) {
-        if (rules[r].selectorText && rules[r].selectorText.indexOf(selector) > -1) {
-          classCache.push(selector.trim());
-          return true;
+    if(!classLookup){
+      classLookup = {};
+      var sheets = document.styleSheets;
+      for (var i in sheets) {
+        var rules = sheets[i].rules || sheets[i].cssRules;
+        for (var r in rules) {
+          classLookup[rules[r].selectorText] = true;
         }
       }
     }
 
-    return false;
+    return classLookup[selector.trim()]
   }
 
   function imojify_node(node) {
