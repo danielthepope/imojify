@@ -1,5 +1,6 @@
 function imojify(scope) {
   scope = scope || '.imojify';
+  var emojiRe = /:([\w-\+]+):/g;
   var classLookup;
   var elementsToReplace = document.querySelectorAll(scope);
   for (var i = 0; i < elementsToReplace.length; i++) {
@@ -23,7 +24,7 @@ function imojify(scope) {
 
   function imojify_node(node) {
     if (node.constructor === Text) {
-      node.data.replace(/:([\w-\+]+):/g, function (match, emojiName) {
+      node.data.replace(emojiRe, function (match, emojiName) {
         emojiName = emojiName.replace('+','_');
         if (cssRuleExists('.emoji-' + emojiName)) {
           // If there is :emoji:, we need to insert a span element.
