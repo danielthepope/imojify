@@ -23,10 +23,8 @@ function imojify(scope) {
 
   function imojify_node(node) {
     if (node.constructor === Text) {
-      var matches = node.data.match(/:[\w-\+]+:/g);
-      if (!matches) return;
-      matches.forEach(function (match) {
-        var emojiName = match.replace(/:/g, '').replace('+','_');
+      node.data.replace(/:([\w-\+]+):/g, function (match, emojiName) {
+        emojiName = emojiName.replace('+','_');
         if (cssRuleExists('.emoji-' + emojiName)) {
           // If there is :emoji:, we need to insert a span element.
           // But in order to do that, we have to create a new Text node for the
