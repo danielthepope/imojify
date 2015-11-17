@@ -1,13 +1,13 @@
 {
-  "name": "gemojify",
+  "name": "imojify",
   "version": "0.0.4",
   "description": "Front-end library that replaces colon :emoji: with images",
   "repository": {
     "type": "git",
-    "url": "git://github.com/danielthepope/gemojify.git"
+    "url": "git://github.com/danielthepope/imojify.git"
   },
   "bugs": {
-    "url": "https://github.com/danielthepope/gemojify/issues"
+    "url": "https://github.com/danielthepope/imojify/issues"
   },
   "main": "index.js",
   "scripts": {

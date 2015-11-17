@@ -1,8 +1,8 @@
 {
-  "name": "gemojify",
+  "name": "imojify",
   "main": "index.js",
   "version": "0.0.4",
-  "homepage": "https://github.com/danielthepope/gemojify",
+  "homepage": "https://github.com/danielthepope/imojify",
   "authors": [
     "Daniel Pope <djpope2365@gmail.com>"
   ],
