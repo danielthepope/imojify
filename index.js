@@ -2,22 +2,27 @@ var fs = require('fs');
 var inline = false;
 var output = 'sass/includes/emoji.scss';
 var emojiLocation = 'images/emojis';
-
-String.prototype.endsWith = function(suffix) {
-  return this.indexOf(suffix, this.length - suffix.length) !== -1;
-};
-
-fs.writeFileSync(output, '');
-var files = fs.readdirSync(emojiLocation);
-files.forEach(function(element) {
-  var name = element.split('.')[0].replace(/\+/g,'_');
-  var sass = '';
-  if (inline) {
-    var data = fs.readFileSync(emojiLocation + '/' + element);
-    var b64 = new Buffer(data).toString('base64');
-    sass = '.emoji-'+name+' {\n  background-image:url(data:image/png;base64,'+b64+');\n}\n\n';
-  } else {
-    sass = '.emoji-'+name+' {\n  background-image: url("../' + emojiLocation + '/' + element + '");\n}\n\n';
-  }
-  fs.appendFileSync(output, sass);
+var emojiMapText = fs.readFileSync('emojimap.json');
+var emojiMap = JSON.parse(emojiMapText);
+var emojiArray = [];
+Object.keys(emojiMap).forEach(function(key) {
+  emojiArray.push(emojiMap[key]);
 });
+
+fs.writeFileSync(output, ''); // Erase content in current scss file
+emojiArray.forEach(function(emoji) {
+  var imagePath = emojiLocation + '/' + emoji.unicode + '.svg';
+  if (fs.existsSync(imagePath)) {
+    var cssClass = '.emoji-' + emoji.shortname;
+    emoji.aliases.forEach(function(alias) {
+      cssClass += ', .emoji-' + alias;
+    });
+    cssClass = cssClass.replace(/:/g,'').replace(/\+/g,'_');
+    var sass = cssClass + ' {\n  background-image: url("../' + imagePath + '");\n}\n\n';
+    fs.appendFileSync(output, sass);
+  } else {
+    console.warn(emoji.shortname + ' (' + imagePath + ') does not exist');
+  }
+})
+
+console.log('done');

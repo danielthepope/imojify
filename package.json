@@ -11,7 +11,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "http-server"
   },
   "keywords": [
     "emoji",
@@ -27,6 +28,7 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-sass": "^2.1.0",
+    "http-server": "^0.8.5",
     "node-sass": "^3.4.1"
   }
 }

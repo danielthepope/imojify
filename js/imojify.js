@@ -16,7 +16,7 @@ function imojify(scope) {
     for (var i in sheets) {
       var rules = sheets[i].rules || sheets[i].cssRules;
       for (var r in rules) {
-        if (rules[r].selectorText === selector.trim()) {
+        if (rules[r].selectorText && rules[r].selectorText.indexOf(selector) > -1) {
           classCache.push(selector.trim());
           return true;
         }
