@@ -1,9 +1,9 @@
-function gemojify(scope) {
-  scope = scope || '.gemojify';
+function imojify(scope) {
+  scope = scope || '.imojify';
   var classCache = [];
   var elementsToReplace = document.querySelectorAll(scope);
   for (var i = 0; i < elementsToReplace.length; i++) {
-    gemojify_node(elementsToReplace[i]);
+    imojify_node(elementsToReplace[i]);
   }
 
   function cssRuleExists(selector) {
@@ -26,7 +26,7 @@ function gemojify(scope) {
     return false;
   }
 
-  function gemojify_node(node) {
+  function imojify_node(node) {
     if (node.constructor === Text) {
       var matches = node.data.match(/:[\w-\+]+:/g);
       if (!matches) return;
@@ -54,7 +54,7 @@ function gemojify(scope) {
     } else {
       var childNodes = node.childNodes;
       for (var i = 0; i < childNodes.length; i++) {
-        gemojify_node(childNodes[i]);
+        imojify_node(childNodes[i]);
       }
     }
   }
