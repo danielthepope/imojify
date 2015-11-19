@@ -56,8 +56,8 @@ If you're one of those people who thinks "There is no such thing as too much emo
 1. Finally, run `npm run build`. As if by magic, `imojify.css` should have been updated with your new images!
 
 ## License
-Graphics (in `images/emoji` folder): Copyright 2014 Twitter, Inc and other contributors, licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
+Graphics (in `images/emoji` folder): Copyright 2014 Twitter, Inc and other contributors, licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)
 
-emojimap.json is licensed by [Emoji One] (https://github.com/Ranks/emojione) under the MIT license
+`emojimap.json` is a modified version of [Emoji One](https://github.com/Ranks/emojione)'s `emojis.json`, MIT licensed
 
-Everything else is my code, also MIT licensed.
+Everything else is either coded by me or my [awesome contributors](https://github.com/danielthepope/imojify/graphs/contributors), also MIT licensed.
