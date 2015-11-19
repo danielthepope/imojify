@@ -1,32 +1,39 @@
 function imojify(scope) {
   scope = scope || '.imojify';
   var emojiRe = /:([\w-\+]+):/g;
-  var classLookup;
+  var cssEmojis;
   var elementsToReplace = document.querySelectorAll(scope);
   for (var i = 0; i < elementsToReplace.length; i++) {
     imojify_node(elementsToReplace[i]);
   }
 
-  function cssRuleExists(selector) {
-    if(!classLookup){
-      classLookup = {};
+  function emojiExists(selector) {
+
+    // find any emojis that have css rules to support them
+    if(!cssEmojis){
+      cssEmojis = {};
+      var selectorRe = /\.emoji-(\w+)/g, m;
       var sheets = document.styleSheets;
       for (var i in sheets) {
         var rules = sheets[i].rules || sheets[i].cssRules;
         for (var r in rules) {
-          classLookup[rules[r].selectorText] = true;
+          if(rules[r].type == CSSRule.STYLE_RULE){
+            while(m = selectorRe.exec(rules[r].selectorText)){
+              cssEmojis[m[1]] = true;
+            }
+          }
         }
       }
     }
 
-    return classLookup[selector.trim()]
+    return cssEmojis[selector.trim()]
   }
 
   function imojify_node(node) {
     if (node.constructor === Text) {
       node.data.replace(emojiRe, function (match, emojiName) {
         emojiName = emojiName.replace('+','_');
-        if (cssRuleExists('.emoji-' + emojiName)) {
+        if (emojiExists(emojiName)) {
           // If there is :emoji:, we need to insert a span element.
           // But in order to do that, we have to create a new Text node for the
           //  text before the colon, a span replacing the content inside the
