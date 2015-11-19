@@ -1,38 +1,39 @@
 function imojify(scope) {
   scope = scope || '.imojify';
-  var classCache = [];
+  var emojiRe = /:([\w-\+]+):/g;
+  var cssEmojis;
   var elementsToReplace = document.querySelectorAll(scope);
   for (var i = 0; i < elementsToReplace.length; i++) {
     imojify_node(elementsToReplace[i]);
   }
 
-  function cssRuleExists(selector) {
-    var sheets = document.styleSheets;
+  function emojiExists(selector) {
 
-    if (classCache.indexOf(selector.trim()) >= 0) {
-      return true;
-    }
-
-    for (var i in sheets) {
-      var rules = sheets[i].rules || sheets[i].cssRules;
-      for (var r in rules) {
-        if (rules[r].selectorText && rules[r].selectorText.indexOf(selector) > -1) {
-          classCache.push(selector.trim());
-          return true;
+    // find any emojis that have css rules to support them
+    if(!cssEmojis){
+      cssEmojis = {};
+      var selectorRe = /\.emoji-(\w+)/g, m;
+      var sheets = document.styleSheets;
+      for (var i in sheets) {
+        var rules = sheets[i].rules || sheets[i].cssRules;
+        for (var r in rules) {
+          if(rules[r].type == CSSRule.STYLE_RULE){
+            while(m = selectorRe.exec(rules[r].selectorText)){
+              cssEmojis[m[1]] = true;
+            }
+          }
         }
       }
     }
 
-    return false;
+    return cssEmojis[selector.trim()]
   }
 
   function imojify_node(node) {
     if (node.constructor === Text) {
-      var matches = node.data.match(/:[\w-\+]+:/g);
-      if (!matches) return;
-      matches.forEach(function (match) {
-        var emojiName = match.replace(/:/g, '').replace('+','_');
-        if (cssRuleExists('.emoji-' + emojiName)) {
+      node.data.replace(emojiRe, function (match, emojiName) {
+        emojiName = emojiName.replace('+','_');
+        if (emojiExists(emojiName)) {
           // If there is :emoji:, we need to insert a span element.
           // But in order to do that, we have to create a new Text node for the
           //  text before the colon, a span replacing the content inside the
