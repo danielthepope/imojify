@@ -45,16 +45,15 @@ becomes
 
 ![Colon emoji inside the Imojify class are converted to real emoji](https://dl.dropboxusercontent.com/u/13316703/imojify/imojify_demo.png)
 
-## Adding custom emoji
+## ~~Adding custom emoji~~
 
-** I broke this bit. See #15 **
+** I broke this bit. See [#15](https://github.com/danielthepope/imojify/issues/15) **
 
 If you're one of those people who thinks "There is no such thing as too much emoji", you can add your own emoji, including animated GIFs!
 
-1. In order to update the CSS, you need `gulp-cli` installed (`npm install gulp-cli -g`).
-1. You also need to install the development dependencies: `npm install`
-1. Add more images to the `images/emojis` folder, making sure their filenames without extensions don't clash e.g. `smile.png` clashes with `smile.gif` (they would both be applied to the `emoji-smile` class)
-1. Finally, run `gulp build`. As if by magic, `imojify.css` should have been updated with your new images!
+1. You need to install the development dependencies: `npm install`
+1. Add more images to the `images/emojis/custom` folder, making sure their filenames without extensions don't clash e.g. `smile.png` clashes with `smile.gif` (they would both be applied to the `emoji-smile` class)
+1. Finally, run `npm run build`. As if by magic, `imojify.css` should have been updated with your new images!
 
 ## License
 Graphics (in `images/emoji` folder): Copyright 2014 Twitter, Inc and other contributors, licensed under CC-BY 4.0: https://creativecommons.org/licenses/by/4.0/
