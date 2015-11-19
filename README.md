@@ -45,15 +45,18 @@ becomes
 
 ![Colon emoji inside the Imojify class are converted to real emoji](https://dl.dropboxusercontent.com/u/13316703/imojify/imojify_demo.png)
 
-## ~~Adding custom emoji~~
-
-** I broke this bit. See [#15](https://github.com/danielthepope/imojify/issues/15) **
+## Adding custom emoji
 
 If you're one of those people who thinks "There is no such thing as too much emoji", you can add your own emoji, including animated GIFs!
 
 1. You need to install the development dependencies: `npm install`
-1. Add more images to the `images/emojis/custom` folder, making sure their filenames without extensions don't clash e.g. `smile.png` clashes with `smile.gif` (they would both be applied to the `emoji-smile` class)
-1. Finally, run `npm run build`. As if by magic, `imojify.css` should have been updated with your new images!
+1. Add more images to the `images/emojis/custom` folder, making sure their filenames without extensions don't clash*.
+1. Run `npm run build`. As if by magic, `imojify.css` should have been updated with your new images!
+1. You can now use colon emoji by referencing the filename. For example, `demo.html` references `:upside_down_face:` which is replaced by `upside_down_face.svg` from the `custom` folder. Note that if you include a file with the same name as a predefined emoji, the predefined emoji will be replaced.
+
+If you don't want to use node, you could also modify the CSS file manually.
+
+*`smile.png` clashes with `smile.gif` (they would both be applied to the `emoji-smile` class)
 
 ## License
 Graphics (in `images/emoji` folder): Copyright 2014 Twitter, Inc and other contributors, licensed under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/)

@@ -28,6 +28,7 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-cssmin": "^0.1.7",
     "gulp-sass": "^2.1.0",
     "http-server": "^0.8.5",
     "node-sass": "^3.4.1"

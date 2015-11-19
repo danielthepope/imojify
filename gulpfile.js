@@ -1,12 +1,13 @@
 var gulp = require('gulp');
+var cssmin = require('gulp-cssmin');
 var sass = require('gulp-sass');
 
 gulp.task('sass', function () {
   gulp.src('./sass/*.scss')
     .pipe(sass({
       outputStyle: 'compressed'
-      // outputStyle: 'expanded'
     }).on('error', sass.logError))
+    .pipe(cssmin()) // Removes unnecessary classes
     .pipe(gulp.dest('./css'));
 });
 
