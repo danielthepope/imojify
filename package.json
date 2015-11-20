@@ -1,6 +1,6 @@
 {
   "name": "imojify",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Front-end library that replaces colon :emoji: with images",
   "homepage": "http://www.imojify.com",
   "repository": {
