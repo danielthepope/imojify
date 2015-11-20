@@ -17,7 +17,7 @@ var emojiArray = Object.keys(emojiMap).map(function(key) {
 var outputSass = '';
 if (useTwemoji) {
   emojiArray.forEach(function(emoji) {
-    var imagePath = emojiLocation + '/' + emoji.unicode + '.svg';
+    var imagePath = emojiLocation + '/' + emoji.unicode.toLowerCase() + '.svg';
     if (fs.existsSync(imagePath)) {
       var sass = generateCssClass(imagePath, emoji.shortname, emoji.aliases);
       outputSass += sass;
