@@ -6,6 +6,7 @@ var useTwemoji = true;
 var useCustom = true; 
 var allColonsRE = /:/g;
 var plussesAndSpacesRE = /[\+ ]/g;
+var leadingZeroesRE = /^0+/;
 
 var emojiMapText = fs.readFileSync('emojimap.json');
 var emojiMap = JSON.parse(emojiMapText);
@@ -17,7 +18,7 @@ var emojiArray = Object.keys(emojiMap).map(function(key) {
 var outputSass = '';
 if (useTwemoji) {
   emojiArray.forEach(function(emoji) {
-    var imagePath = emojiLocation + '/' + emoji.unicode.toLowerCase() + '.svg';
+    var imagePath = emojiLocation + '/' + emoji.unicode.toLowerCase().replace(leadingZeroesRE, '') + '.svg';
     if (fs.existsSync(imagePath)) {
       var sass = generateCssClass(imagePath, emoji.shortname, emoji.aliases);
       outputSass += sass;
