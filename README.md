@@ -2,11 +2,22 @@
 Front-end library that replaces colon :emoji: with images
 
 ## Introduction
-This is a front-end library that replaces text inside colons with a `<span>` element of a particular CSS class that will fetch its corresponding emoji. To find the right colon emoji to use, try [emoji.muan.co](http://emoji.muan.co/). The images themselves were lovingly borrowed from [Twitter's Twemoji repository](https://github.com/twitter/twemoji) and the emoji map file is from the [Emoji One project](https://github.com/Ranks/emojione).
+This is a front-end library that replaces text inside colons with an SVG image of its corresponding emoji. This means the output will look the same on all modern browsers (since unicode characters don't play nicely with Windows). It is also possible to add your own custom emoji to your site.
+
+To find the right colon emoji to use, try [emoji.muan.co](http://emoji.muan.co/). The images themselves were lovingly borrowed from [Twitter's Twemoji repository](https://github.com/twitter/twemoji) and the emoji map file is from the [Emoji One project](https://github.com/Ranks/emojione).
 
 e.g. `:smile:` becomes ![smile emoji](https://dl.dropboxusercontent.com/u/13316703/imojify/smile.png)
 
 The emoji scales to the size of the font, so emoji specified in `<h1>` tags will be larger than those in `<p>` tags.
+
+## What's new in v0.0.5
+- Replaced Gemoji with Twemoji
+- Renamed project from Gemojify to Imojify. All functions and class names have been renamed to reflect this
+- Added ignore selector to prevent applying `imojify()` inside certain elements
+- Created spans have `title` and `aria-label` attributes for accessibility
+- Custom emoji must be placed in the images/emoji/custom folder, like `upside_down_face.svg`
+- Use `npm run build` instead of `gulp build` in instructions
+- Performance improvements
 
 ## Use in your project
 
