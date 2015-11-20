@@ -45,6 +45,14 @@ becomes
 
 ![Colon emoji inside the Imojify class are converted to real emoji](https://dl.dropboxusercontent.com/u/13316703/imojify/imojify_demo.png)
 
+## Ignoring elements
+
+If you have some elements within your source element that you don't want processed you can specify a selector to match all elements to ignore.
+
+```js
+imojify('.imojify', { ignore: '.ignore-emoji' });
+```
+
 ## Adding custom emoji
 
 If you're one of those people who thinks "There is no such thing as too much emoji", you can add your own emoji, including animated GIFs!

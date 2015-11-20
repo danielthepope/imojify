@@ -1,14 +1,15 @@
-function imojify(scope) {
+function imojify(scope, options) {
   scope = scope || '.imojify';
+  options = options || {};
   var emojiRe = /:([\w-\+]+):/g;
   var cssEmojis;
   var elementsToReplace = document.querySelectorAll(scope);
+  var elementsToIgnore = document.querySelectorAll(options.ignore);
   for (var i = 0; i < elementsToReplace.length; i++) {
     imojify_node(elementsToReplace[i]);
   }
 
   function emojiExists(selector) {
-
     // find any emojis that have css rules to support them
     if(!cssEmojis){
       cssEmojis = {};
@@ -49,8 +50,8 @@ function imojify(scope) {
           node.data = post;
         }
       });
-    } else if (node.constructor === HTMLScriptElement) {
-      // Don't process text inside script tags
+    } else if (node.constructor === HTMLScriptElement || [].indexOf.call(elementsToIgnore, node) >= 0) {
+      // Don't process text inside script tags or ignored elements
       return;
     } else {
       var childNodes = node.childNodes;
