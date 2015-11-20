@@ -2,6 +2,7 @@ function imojify(scope, options) {
   scope = scope || '.imojify';
   options = options || {};
   var emojiRe = /:([\w-\+]+):/g;
+  var underscoreRe = /_/g;
   var cssEmojis;
   var elementsToReplace = document.querySelectorAll(scope);
   var elementsToIgnore = document.querySelectorAll(options.ignore);
@@ -33,8 +34,8 @@ function imojify(scope, options) {
   function imojify_node(node) {
     if (node.constructor === Text) {
       node.data.replace(emojiRe, function (match, emojiName) {
-        emojiName = emojiName.replace('+','_');
-        if (emojiExists(emojiName)) {
+        var escapedEmojiName = emojiName.replace('+','_');
+        if (emojiExists(escapedEmojiName)) {
           // If there is :emoji:, we need to insert a span element.
           // But in order to do that, we have to create a new Text node for the
           //  text before the colon, a span replacing the content inside the
@@ -44,7 +45,9 @@ function imojify(scope, options) {
           var post = node.data.substring(node.data.indexOf(match) + match.length);
           var textNode = document.createTextNode(pre);
           var emojiNode = document.createElement('span');
-          emojiNode.className = "emoji emoji-" + emojiName;
+          emojiNode.className = "emoji emoji-" + escapedEmojiName;
+          emojiNode.setAttribute('aria-label', 'Emoji: ' + emojiName.replace(underscoreRe, ' ') + '.');
+          emojiNode.setAttribute('title', match);
           node.parentNode.insertBefore(textNode, node);
           node.parentNode.insertBefore(emojiNode, node);
           node.data = post;
