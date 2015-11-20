@@ -2,6 +2,7 @@
   "name": "imojify",
   "version": "0.0.4",
   "description": "Front-end library that replaces colon :emoji: with images",
+  "homepage": "http://www.imojify.com",
   "repository": {
     "type": "git",
     "url": "git://github.com/danielthepope/imojify.git"
@@ -18,10 +19,10 @@
   "keywords": [
     "emoji",
     "emojify",
-    "GitHub",
+    "Twitter",
+    "twemoji",
     "colon",
-    "css",
-    "gemoji"
+    "css"
   ],
   "author": "danielthepope",
   "license": "MIT",

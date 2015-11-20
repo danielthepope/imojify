@@ -2,7 +2,11 @@
   "name": "imojify",
   "main": "index.js",
   "version": "0.0.4",
-  "homepage": "https://github.com/danielthepope/imojify",
+  "homepage": "http://www.imojify.com",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/danielthepope/imojify.git"
+  },
   "authors": [
     "Daniel Pope <djpope2365@gmail.com>"
   ],
