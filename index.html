@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+    <link rel="stylesheet" href="css/imojify.css">
     <title>imojify</title>
     <style>
-      h1 {
+      body {
         font-family: sans-serif;
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+        padding: 8px;
+      }
+      h1 {
+        font-size: 4em;
         font-weight: normal;
+      }
+      p.large {
+        font-size: 2em;
       }
     </style>
   </head>
   <body>
-    <h1>Coming soon... ;)</h1>
+    <h1>We :heart: emoji!</h1>
+    <p class="large">Presenting Imojify, a JavaScipt library.</p>
+    <p class="large">It turns colon notation emoji into beautiful images that look the same on all modern browsers.</p>
+    <p class="large">Turn <span class="ignore-emoji">:smile:</span> into :smile:</p>
+    <p class="large">:tada: :balloon: Enjoy! :+1: :sparkles:</p>
+    <p>An <a href="https://github.com/danielthepope/imojify">open source project</a> by <a href="https://twitter.com/danielthepope">@danielthepope</a> and some awesome <a href="https://github.com/danielthepope/imojify/graphs/contributors">contributors</a></p>
+    <p>Uses Twitter's <a href="https://github.com/twitter/twemoji">Twemoji</a> library</p>
   </body>
+  <script src="js/imojify.js"></script>
+  <script>
+    imojify('body', { ignore: '.ignore-emoji' });
+  </script>
 </html>

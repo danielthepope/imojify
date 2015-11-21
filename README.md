@@ -1,2 +1,2 @@
-# Gemojify
-A bit of JS that replaces colon :emoji: in HTML with images
+# Imojify
+You've reached the source code for http://www.imojify.com.
