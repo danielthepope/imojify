@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Imojify index</title>
+    <link rel="stylesheet" href="css/imojify.css">
+    <style>
+      .emoji_display {
+        width: 64px;
+        height: 64px;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Imojify index</h1>
+    <h2>Custom emoji</h2>
+    <div id="customEmoji"></div>
+    <h2>Twemoji</h2>
+    <div id="twemoji"></div>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+      var sheets = document.styleSheets;
+      for (var i in sheets) {
+        var rules = sheets[i].rules || sheets[i].cssRules;
+        for (var r in rules) {
+          if(rules[r].type == CSSRule.STYLE_RULE){
+            var image = rules[r].style.backgroundImage;
+            if (image) {
+              if (image.indexOf('/custom/') > -1) {
+                $('#customEmoji').append(createDivForEmoji(rules[r], image));
+              }
+              else {
+                $('#twemoji').append(createDivForEmoji(rules[r], image));
+              }
+            } else {
+              console.log('No emoji for', rules[r].selectorText);
+            }
+          }
+        }
+      }
+      
+      function convertToColon(className) {
+        var output = [];
+        className.split(',').forEach(function(str) {
+          output.push(':' + str.trim().substring(7) + ':');
+        })
+        return output.join(' ');
+      }
+      
+      function createDivForEmoji(cssRule, image) {
+        var text = convertToColon(cssRule.selectorText);
+        return $('<div class="emoji emoji_display">')
+          .css('background-image', image)
+          .attr('title', text)
+          // .append($('<p>').text(text));
+      }
+    </script>
+  </body>
+</html>
