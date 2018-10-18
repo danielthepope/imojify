@@ -1,2 +1,2 @@
 # Imojify
-You've reached the source code for http://www.imojify.com.
+You've reached the source code for https://danielthepope.github.io/imojify.
