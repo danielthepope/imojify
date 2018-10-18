@@ -1,6 +1,6 @@
 {
   "name": "imojify",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Front-end library that replaces colon :emoji: with images",
   "homepage": "https://danielthepope.github.io/imojify",
   "repository": {
