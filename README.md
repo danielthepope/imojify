@@ -1,3 +1,7 @@
+# Deprecation notice
+
+Yeah, this was an interesting project at the time, but browser emoji support has progressed faster than I've been able to maintain this repo. I'm not maintaining this repo right now. But who knows, maybe I'll pick it up again sometime.
+
 # Imojify
 Front-end library that replaces colon :emoji: with images
 
@@ -6,7 +10,7 @@ This is a front-end library that replaces text inside colons with an SVG image o
 
 To find the right colon emoji to use, try [emoji.muan.co](http://emoji.muan.co/). The images themselves were lovingly borrowed from [Twitter's Twemoji repository](https://github.com/twitter/twemoji) and the emoji map file is from the [Emoji One project](https://github.com/Ranks/emojione).
 
-e.g. `:smile:` becomes ![smile emoji](https://dl.dropboxusercontent.com/u/13316703/imojify/smile.png)
+e.g. `:smile:` becomes ![smile emoji](smile.png)
 
 The emoji scales to the size of the font, so emoji specified in `<h1>` tags will be larger than those in `<p>` tags.
 
@@ -54,7 +58,7 @@ Inside your HTML, include a reference to `css/imojify.css` and `js/imojify.js`. 
 
 becomes
 
-![Colon emoji inside the Imojify class are converted to real emoji](https://dl.dropboxusercontent.com/u/13316703/imojify/imojify_demo.png)
+![Colon emoji inside the Imojify class are converted to real emoji](imojify_demo.png)
 
 ## Ignoring elements
 

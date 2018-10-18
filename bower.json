@@ -2,7 +2,7 @@
   "name": "imojify",
   "main": "index.js",
   "version": "0.0.5",
-  "homepage": "http://www.imojify.com",
+  "homepage": "https://danielthepope.github.io/imojify",
   "repository": {
     "type": "git",
     "url": "git://github.com/danielthepope/imojify.git"
